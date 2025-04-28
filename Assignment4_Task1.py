@@ -1,14 +1,16 @@
 
 try:
-    file1 = open("Sample.txt","r")
+    file1 = open("Sample1.txt","r")
     lines = file1.readlines()
 
+    lineno = 0
     for line in lines:
-        print(line)
+        lineno += 1
+        print("Line ",lineno,": ",line.strip())
 
     file1.close()
 
 except:
-    print("Sample.txt doesn't exist")
+    print("file Sample.txt was not found.")
 
 
