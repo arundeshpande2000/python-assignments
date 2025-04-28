@@ -1,16 +1,22 @@
 
 try:
-    file1 = open("Sample1.txt","r")
-    lines = file1.readlines()
+    file1 = open("output.txt","w")
+    str1 = input("Enter text to write to the file: ")
+    file1.write(str1+"\n")
+    print("Data successfully written to file output.txt\n")
 
-    lineno = 0
-    for line in lines:
-        lineno += 1
-        print("Line ",lineno,": ",line.strip())
+    str1 = input("Enter additional text to append to the file: ")
+    file1.write(str1)
+    print("Additional data successfully written to file output.txt\n")
+    file1.close()
 
+    file1 = open("output.txt", "r")
+    print("Final content of output.txt")
+    lines = file1.read()
+    print(lines)
     file1.close()
 
 except:
-    print("file Sample.txt was not found.")
+    print("file output.txt was not found.")
 
 
